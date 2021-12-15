@@ -12,7 +12,7 @@ class MyXmlPullParserHandler {
 
     private var name = ""
     private var ID = 0
-    private var grade=0
+    private var grade=0.0
     fun parse(inputStream: InputStream): List<Student> {
         try {
             val factory = XmlPullParserFactory.newInstance()
@@ -31,7 +31,7 @@ class MyXmlPullParserHandler {
                             name = text.toString()
                         }
                         tagName.equals("grade", ignoreCase = true) -> {
-                            grade = text!!.toInt()
+                            grade = text!!.toDouble()
                         }
 
 
